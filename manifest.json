@@ -1,0 +1,40 @@
+{
+    "name": "RENDAMAN",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "RENDAMAN allow you to hit a specific element repeatedly",
+    "host_permissions": [
+        "*://*/*"
+      ],
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+    "icons": {
+        "32": "favicon.png",
+        "16": "favicon.png",
+        "48": "favicon.png",
+        "128": "favicon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "all_frames": false,
+            "match_about_blank": true
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "連打マン",
+        "default_popup": "popup.html"
+    }
+}
